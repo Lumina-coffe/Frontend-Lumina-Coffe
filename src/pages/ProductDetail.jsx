@@ -39,7 +39,7 @@ function ProductDetail({ product, onClose }) {
 
         setLoading(true);
         try {
-            const response = await axios.post("http://localhost:4000/api/transactions", {
+            const response = await axios.post("https://backend-lumina-coffe.vercel.app/api/transactions", {
                 first_name: name,
                 amount: totalPrice,
                 product_id: product._id,

@@ -1,4 +1,4 @@
-export const BASEURL = 'http://localhost:4000';
+export const BASEURL = 'https://backend-lumina-coffe.vercel.app/';
 
 export const URL_SIGNIN = `${BASEURL}/api/auth/signin`;
 export const URL_PRODUCT = `${BASEURL}/api/products`;
