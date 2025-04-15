@@ -90,7 +90,7 @@ function ProductDetail({ product, onClose }) {
 
     const checkPaymentStatus = async () => {
         try {
-            const response = await axios.get(`http://localhost:4000/api/transaction-status/${orderId}`);
+            const response = await axios.get(`https://backend-lumina-coffe.vercel.app/api/transaction-status/${orderId}`);
             const status = response.data.status;
 
             if (status === 'settlement' || status === 'capture') {

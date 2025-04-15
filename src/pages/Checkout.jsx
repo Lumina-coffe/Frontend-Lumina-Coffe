@@ -24,7 +24,7 @@ function Checkout() {
             localStorage.setItem("payment", firstName);
 
             // Kirim data ke backend
-            const response = await axios.post("http://localhost:4000/api/transactions", {
+            const response = await axios.post("https://backend-lumina-coffe.vercel.app/api/transactions", {
                 first_name: firstName,
                 items: cart,
                 amount: totalAmount,
