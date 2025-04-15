@@ -20,7 +20,7 @@ function Products() {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await axios.get("http://localhost:4000/api/products");
+                const response = await axios.get("https://backend-lumina-coffe.vercel.app/api/products");
                 setProducts(response.data);
             } catch (error) {
                 console.error("Gagal mengambil data produk", error);
