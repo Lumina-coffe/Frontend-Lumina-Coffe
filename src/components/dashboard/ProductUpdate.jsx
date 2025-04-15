@@ -4,7 +4,7 @@ import { UploadOutlined } from "@ant-design/icons";
 import axios from "axios";
 import { URL_PRODUCT } from "../../../utils/Endpoint";
 import { useNavigate, useParams } from "react-router-dom";
-import NumberFormat from "react-number-format";
+import { NumberFormat } from "react-number-format";
 
 const UpdateProduct = () => {
     const [form] = Form.useForm();

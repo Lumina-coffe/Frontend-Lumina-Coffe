@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import NumberFormat from "react-number-format";
+import { NumberFormat } from "react-number-format";
 
 
 
