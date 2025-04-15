@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { NumberFormat } from "react-number-format";
+import NumericFormat from "react-number-format";
 
 
 
@@ -26,7 +26,7 @@ const AddProduct = () => {
         formData.append("thumbnail", image);
 
         try {
-            await axios.post("http://localhost:4000/api/products", formData, {
+            await axios.post("https://backend-lumina-coffe.vercel.app/api/products", formData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                 },
@@ -58,15 +58,14 @@ const AddProduct = () => {
 
                 <div className="mb-4">
                     <label className="block text-gray-700 font-medium mb-1">Harga:</label>
-                    <NumberFormat
-                        className="w-full border border-gray-300 px-4 py-2 rounded-lg"
+                    <NumericFormat
                         value={price}
-                        onValueChange={(values) => setPrice(values.floatValue)} // Mengambil nilai angka
-                        thousandSeparator="."
-                        decimalSeparator=","
-                        prefix="Rp "
-                        required
+                        onValueChange={(values) => setPrice(values.floatValue)}
+                        thousandSeparator=","
+                        prefix="Rp"
+                        customInput={Input} // Jika kamu pakai AntD atau input kustom
                     />
+
                 </div>
 
                 <div className="mb-4">

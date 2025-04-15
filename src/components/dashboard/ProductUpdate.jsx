@@ -4,7 +4,7 @@ import { UploadOutlined } from "@ant-design/icons";
 import axios from "axios";
 import { URL_PRODUCT } from "../../../utils/Endpoint";
 import { useNavigate, useParams } from "react-router-dom";
-import { NumberFormat } from "react-number-format";
+import NumericFormat from "react-number-format";
 
 const UpdateProduct = () => {
     const [form] = Form.useForm();
@@ -92,7 +92,7 @@ const UpdateProduct = () => {
                 </Form.Item>
 
                 <Form.Item label="Harga" required>
-                    <NumberFormat
+                    <NumericFormat
                         className="w-full border border-gray-300 px-4 py-2 rounded-md"
                         value={rawPrice}
                         onValueChange={(values) => setRawPrice(values.floatValue)}
