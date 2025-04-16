@@ -12,6 +12,7 @@ import AddProduct from "./components/dashboard/ProductCreate";
 import ViewProduct from "./components/dashboard/ProductsDash";
 import UpdateProduct from "./components/dashboard/ProductUpdate";
 import SuccessPayment from "./pages/PaymentSuccess";
+import ProtectedAdminRoute from "./routes/ProtectedAdminRoute";
 
 function App() {
   return (
@@ -33,26 +34,25 @@ function App() {
         <Route path="/login" element={<Login />} />
 
         {/* Halaman Payment Success */}
-        <Route
-          path="/success-payment/:id"
-          element={<SuccessPayment />}
-        />
+        <Route path="/success-payment/:id" element={<SuccessPayment />} />
 
         {/* Halaman Admin Dashboard */}
-        <Route
-          path="/admin/dashboard/*"
-          element={
-            <div className="flex min-h-screen">
-              <Sidebar />
-              <Routes>
-                <Route path="" element={<Dashboard />} />
-                <Route path="products" element={<ViewProduct />} />
-                <Route path="products/create" element={<AddProduct />} />
-                <Route path="products/:id" element={<UpdateProduct />} />
-              </Routes>
-            </div>
-          }
-        />
+        <Route element={<ProtectedAdminRoute />}>
+          <Route
+            path="/admin/dashboard/*"
+            element={
+              <div className="flex min-h-screen">
+                <Sidebar />
+                <Routes>
+                  <Route path="" element={<Dashboard />} />
+                  <Route path="products" element={<ViewProduct />} />
+                  <Route path="products/create" element={<AddProduct />} />
+                  <Route path="products/:id" element={<UpdateProduct />} />
+                </Routes>
+              </div>
+            }
+          />
+        </Route>
       </Routes>
     </CartProvider>
   );
