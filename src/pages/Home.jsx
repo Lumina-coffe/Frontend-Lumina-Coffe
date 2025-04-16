@@ -35,13 +35,13 @@ function Home() {
             </p>
             <button
               onClick={goToProducts} // Panggil fungsi untuk mengarahkan
-              className="mt-4 bg-amber-400 text-[#2D1E15] px-6 py-2 rounded-full font-semibold text-sm hover:bg-amber-300 transition-all duration-300 shadow-lg"
+              className="mt-4 mr-5 bg-amber-400 text-[#2D1E15] px-6 py-2 rounded-full font-semibold text-sm hover:bg-amber-300 transition-all duration-300 shadow-lg"
             >
               Temukan Rasa Kami
-            </button>
+            </button>{" "}
             <button
-              onClick={goToLogin} // Panggil fungsi untuk mengarahkan
-              className="mt-4 bg-amber-400 text-[#2D1E15] px-6 py-2 rounded-full font-semibold text-sm hover:bg-amber-300 transition-all duration-300 shadow-lg"
+              onClick={goToLogin}
+              className="mt-6 bg-amber-400 text-[#2D1E15] px-6 py-2 rounded-full font-semibold text-sm hover:bg-amber-300 transition-all duration-300 shadow-lg"
             >
               Login
             </button>
